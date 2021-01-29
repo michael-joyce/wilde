@@ -26,6 +26,10 @@ declare function document:title($node as node() ) as xs:string {
         "(unknown title)" 
 };
 
+declare function document:sortable($node as node()) as xs:string {
+	normalize-space(root($node)//meta[@name='wr.sortable']/@content)
+};
+
 declare function document:subtitle($node as node()) as xs:string {
     string(root($node)//body/p[1])
 };
