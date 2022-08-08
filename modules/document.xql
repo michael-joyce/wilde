@@ -66,7 +66,7 @@ declare function document:updated($node as node()) as xs:string {
       ''
 };
 
-declare function document:publisher($node as node()) as xs:string {
+declare function document:publisher($node as node()?) as xs:string {
   string(root($node)//meta[@name = 'dc.publisher']/@content)
 };
 
